@@ -16,13 +16,20 @@
         <action
             android:id="@+id/action_FirstFragment_to_tikTokPlayerFragment"
             app:destination="@id/tikTokPlayerFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_instagramScreenFragment"
+            app:destination="@id/instagramScreenFragment" />
     </fragment>
     <fragment
         android:id="@+id/facebookPlayerFragment"
-        android:name="app.videoplayerinsiderecyclerview.views.facebookPlayer.FacebookPlayerFragment"
+        android:name="app.videoplayerinsiderecyclerview.views.facebookScreen.FacebookScreenFragment"
         android:label="FacebookPlayerFragment" />
     <fragment
         android:id="@+id/tikTokPlayerFragment"
-        android:name="app.videoplayerinsiderecyclerview.views.tiktokPlayer.TikTokPlayerFragment"
+        android:name="app.videoplayerinsiderecyclerview.views.tiktokScreen.TikTokScreenFragment"
         android:label="TikTokPlayerFragment" />
+    <fragment
+        android:id="@+id/instagramScreenFragment"
+        android:name="app.videoplayerinsiderecyclerview.views.instagramScreen.InstagramScreenFragment"
+        android:label="InstagramScreenFragment" />
 </navigation>

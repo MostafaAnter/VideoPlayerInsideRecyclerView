@@ -1,4 +1,4 @@
-package app.videoplayerinsiderecyclerview.views.tiktokPlayer
+package app.videoplayerinsiderecyclerview.views.instagramScreen
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import app.videoplayerinsiderecyclerview.R
-import app.videoplayerinsiderecyclerview.databinding.TiktokTimelineItemRecyclerBinding
+import app.videoplayerinsiderecyclerview.databinding.InstagramTimelineItemRecyclerBinding
 import app.videoplayerinsiderecyclerview.models.MediaObject
 import app.videoplayerinsiderecyclerview.utils.PlayerStateCallback
 import com.google.android.exoplayer2.Player
@@ -16,9 +16,10 @@ import java.util.*
 /**
  * A custom adapter to use with the RecyclerView widget.
  */
-class TikTokRecyclerAdapter(
+class InstagramRecyclerAdapter(
     private val mContext: Context,
-    private var modelList: ArrayList<MediaObject>) : RecyclerView.Adapter<RecyclerView.ViewHolder>(), PlayerStateCallback {
+    private var modelList: ArrayList<MediaObject>) : RecyclerView.Adapter<RecyclerView.ViewHolder>(),
+    PlayerStateCallback {
     private var mItemClickListener: OnItemClickListener? = null
 
     fun updateList(modelList: ArrayList<MediaObject>) {
@@ -30,8 +31,8 @@ class TikTokRecyclerAdapter(
         viewGroup: ViewGroup,
         viewType: Int
     ): VideoPlayerViewHolder {
-        val binding: TiktokTimelineItemRecyclerBinding = DataBindingUtil.inflate(LayoutInflater.from(viewGroup.context)
-            , R.layout.tiktok_timeline_item_recycler, viewGroup, false)
+        val binding: InstagramTimelineItemRecyclerBinding = DataBindingUtil.inflate(LayoutInflater.from(viewGroup.context)
+            , R.layout.instagram_timeline_item_recycler, viewGroup, false)
         return VideoPlayerViewHolder(binding)
     }
 
@@ -70,7 +71,7 @@ class TikTokRecyclerAdapter(
         )
     }
 
-    inner class VideoPlayerViewHolder(private val binding: TiktokTimelineItemRecyclerBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class VideoPlayerViewHolder(private val binding: InstagramTimelineItemRecyclerBinding) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(model: MediaObject) {
             // handel on item click
             binding.root.setOnClickListener {
@@ -83,7 +84,7 @@ class TikTokRecyclerAdapter(
 
             binding.apply {
                 dataModel = model
-                callback = this@TikTokRecyclerAdapter
+                callback = this@InstagramRecyclerAdapter
                 index = adapterPosition
                 executePendingBindings()
             }

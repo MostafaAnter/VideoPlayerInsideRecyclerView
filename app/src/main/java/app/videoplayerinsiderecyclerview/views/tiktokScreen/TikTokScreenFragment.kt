@@ -1,4 +1,4 @@
-package app.videoplayerinsiderecyclerview.views.tiktokPlayer
+package app.videoplayerinsiderecyclerview.views.tiktokScreen
 
 import android.os.Bundle
 import android.util.Log
@@ -22,7 +22,7 @@ import app.videoplayerinsiderecyclerview.viewModels.MediaViewModel
 /**
  * A simple [Fragment] subclass.
  */
-class TikTokPlayerFragment : Fragment() {
+class TikTokScreenFragment : Fragment() {
     private var recyclerView: RecyclerView? = null
     private var mAdapter: TikTokRecyclerAdapter? = null
     private val modelList: ArrayList<MediaObject> = ArrayList<MediaObject>()

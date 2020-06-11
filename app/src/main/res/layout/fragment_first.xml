@@ -10,8 +10,8 @@
         android:id="@+id/tiktok_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TikTok Player"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="TikTok Screen"
+        app:layout_constraintBottom_toTopOf="@+id/instagram_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/facebook_button" />
@@ -20,10 +20,20 @@
         android:id="@+id/facebook_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Facebook Player"
+        android:text="Facebook Screen"
         app:layout_constraintBottom_toTopOf="@+id/tiktok_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/instagram_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instagram Screen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiktok_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

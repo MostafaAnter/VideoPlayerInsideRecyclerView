@@ -1,4 +1,4 @@
-package app.videoplayerinsiderecyclerview.views.facebookPlayer
+package app.videoplayerinsiderecyclerview.views.facebookScreen
 
 import android.content.Context
 import android.util.Log

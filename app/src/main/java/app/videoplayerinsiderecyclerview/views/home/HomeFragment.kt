@@ -35,6 +35,11 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_FirstFragment_to_tikTokPlayerFragment)
         }
 
+        // go to instagram home page
+        instagram_button.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_instagramScreenFragment)
+        }
+
 
 
     }

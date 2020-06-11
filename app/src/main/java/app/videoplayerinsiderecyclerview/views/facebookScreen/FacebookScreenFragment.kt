@@ -1,4 +1,4 @@
-package app.videoplayerinsiderecyclerview.views.facebookPlayer
+package app.videoplayerinsiderecyclerview.views.facebookScreen
 
 import android.os.Bundle
 import android.util.Log
@@ -21,7 +21,7 @@ import app.videoplayerinsiderecyclerview.viewModels.MediaViewModel
  * A simple [Fragment] subclass.
  */
 // create by Mostafa Anter
-class FacebookPlayerFragment : Fragment() {
+class FacebookScreenFragment : Fragment() {
     private var recyclerView: RecyclerView? = null
     private var mAdapter: FacebookRecyclerAdapter? = null
     private val modelList = ArrayList<MediaObject>()
