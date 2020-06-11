@@ -6,6 +6,6 @@ this is the implementation of that article [meduim article](https://medium.com/m
 
 # Demo
 
-[Youtube video](https:/www.youtube.comembedKynEZzerD8M)
+[Youtube video](https://youtu.be/KynEZzerD8M)
 
 
