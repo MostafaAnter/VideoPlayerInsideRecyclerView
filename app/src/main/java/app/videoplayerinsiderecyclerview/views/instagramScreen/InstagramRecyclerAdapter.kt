@@ -10,6 +10,7 @@ import app.videoplayerinsiderecyclerview.R
 import app.videoplayerinsiderecyclerview.databinding.InstagramTimelineItemRecyclerBinding
 import app.videoplayerinsiderecyclerview.models.MediaObject
 import app.videoplayerinsiderecyclerview.utils.PlayerStateCallback
+import app.videoplayerinsiderecyclerview.utils.PlayerViewAdapter
 import com.google.android.exoplayer2.Player
 import java.util.*
 
@@ -49,6 +50,12 @@ class InstagramRecyclerAdapter(
             // send data to view holder
             genericViewHolder.onBind(model)
         }
+    }
+
+    override fun onViewRecycled(holder: RecyclerView.ViewHolder) {
+        val position = holder.adapterPosition
+        PlayerViewAdapter.releaseRecycledPlayers(position)
+        super.onViewRecycled(holder)
     }
 
     override fun getItemCount(): Int {

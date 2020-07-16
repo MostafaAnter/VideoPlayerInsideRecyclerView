@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import app.videoplayerinsiderecyclerview.R
 import app.videoplayerinsiderecyclerview.models.MediaObject
-import app.videoplayerinsiderecyclerview.utils.PlayerViewAdapter.Companion.playIndexThenPausePreviousAndNextPlayers
+import app.videoplayerinsiderecyclerview.utils.PlayerViewAdapter.Companion.playIndexThenPausePreviousPlayer
 import app.videoplayerinsiderecyclerview.utils.PlayerViewAdapter.Companion.releaseAllPlayers
 import app.videoplayerinsiderecyclerview.utils.RecyclerViewScrollListener
 import app.videoplayerinsiderecyclerview.viewModels.MediaViewModel
@@ -66,16 +66,17 @@ class FacebookScreenFragment : Fragment() {
         val layoutManager = LinearLayoutManager(activity)
         recyclerView!!.layoutManager = layoutManager
         recyclerView!!.adapter = mAdapter
-        scrollListener = object : RecyclerViewScrollListener(){
+        scrollListener = object : RecyclerViewScrollListener() {
             override fun onItemIsFirstVisibleItem(index: Int) {
                 Log.d("visible item index", index.toString())
                 // play just visible item
-                playIndexThenPausePreviousAndNextPlayers(index)
+                if (index != -1)
+                    playIndexThenPausePreviousPlayer(index)
             }
 
         }
         recyclerView!!.addOnScrollListener(scrollListener)
-        mAdapter!!.SetOnItemClickListener(object :FacebookRecyclerAdapter.OnItemClickListener{
+        mAdapter!!.SetOnItemClickListener(object : FacebookRecyclerAdapter.OnItemClickListener {
             override fun onItemClick(view: View?, position: Int, model: MediaObject?) {
 
             }

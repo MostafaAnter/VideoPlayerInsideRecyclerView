@@ -70,16 +70,17 @@ class TikTokScreenFragment : Fragment() {
         val snapHelper: SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(recyclerView!!)
 
-        scrollListener = object : RecyclerViewScrollListener(){
+        scrollListener = object : RecyclerViewScrollListener() {
             override fun onItemIsFirstVisibleItem(index: Int) {
                 Log.d("visible item index", index.toString())
                 // play just visible item
-                PlayerViewAdapter.playIndexThenPausePreviousAndNextPlayers(index)
+                if (index != -1)
+                    PlayerViewAdapter.playIndexThenPausePreviousPlayer(index)
             }
 
         }
         recyclerView!!.addOnScrollListener(scrollListener)
-        mAdapter!!.SetOnItemClickListener(object : TikTokRecyclerAdapter.OnItemClickListener{
+        mAdapter!!.SetOnItemClickListener(object : TikTokRecyclerAdapter.OnItemClickListener {
             override fun onItemClick(view: View?, position: Int, model: MediaObject?) {
 
             }
