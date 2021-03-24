@@ -50,6 +50,7 @@
                 app:progressbar="@{progressBar}"
                 app:thumbnail="@{thumbnail}"
                 app:item_index="@{index}"
+                app:autoPlay="@{true}"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

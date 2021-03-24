@@ -59,12 +59,12 @@ class PlayerViewAdapter {
         * thumbnail for show before video start
         * */
         @JvmStatic
-        @BindingAdapter(value = ["video_url", "on_state_change", "progressbar", "thumbnail", "item_index"], requireAll = false)
-        fun PlayerView.loadVideo(url: String, callback: PlayerStateCallback, progressbar: ProgressBar, thumbnail: ImageView, item_index: Int? = null) {
+        @BindingAdapter(value = ["video_url", "on_state_change", "progressbar", "thumbnail", "item_index", "autoPlay"], requireAll = false)
+        fun PlayerView.loadVideo(url: String, callback: PlayerStateCallback, progressbar: ProgressBar, thumbnail: ImageView, item_index: Int? = null, autoPlay: Boolean = false) {
             if (url == null) return
             val player = SimpleExoPlayer.Builder(context).build()
 
-            player.playWhenReady = false
+            player.playWhenReady = autoPlay
             player.repeatMode = Player.REPEAT_MODE_ALL
             // When changing track, retain the latest frame instead of showing a black screen
             setKeepContentOnPlayerReset(true)
