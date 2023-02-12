@@ -39,7 +39,7 @@
             android:background="#000"
             android:scaleType="center">
 
-            <com.google.android.exoplayer2.ui.PlayerView
+            <com.google.android.exoplayer2.ui.StyledPlayerView
                 app:surface_type="texture_view"
                 android:id="@+id/item_video_exoplayer"
                 android:layout_width="match_parent"
